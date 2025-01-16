@@ -1,8 +1,5 @@
 ﻿# IMDB-Movie-Analysis-
-# IMDb Movie Analysis Database
 [Dataset Link](https://docs.google.com/spreadsheets/d/1in1xkssJYKpXloGGQaMTcfaAwYx3mSoM/edit?gid=839469216#gid=839469216)
-
-This repository contains an SQL script to create and manage a movie database, **`moviesdb1`**, which includes various movie-related tables such as `movies`, `actors`, `financials`, `languages`, and a relationship table for `movie_actor`. The database allows for detailed querying and analysis of movie data from different studios, industries, and languages.
 
 ## Database Structure
 
@@ -47,29 +44,19 @@ The database consists of the following tables:
 
 ## Data Loading
 
-The SQL script provides commands to load data into the tables from CSV files:
-
 - `movies.csv`: Contains movie details.
 - `movie_actor.csv`: Contains relationships between movies and actors.
 - `actors.csv`: Contains actor details.
 - `financials.csv`: Contains movie financial details.
 - `languages.csv`: Contains language details.
 
-The `LOAD DATA INFILE` command is used to import the data into the respective tables.
-
 ## Foreign Keys
-
-The script adds foreign key constraints to maintain referential integrity between the tables:
-
 - `movies.language_id` references `languages.language_id`.
 - `movie_actor.movie_id` references `movies.movie_id`.
 - `movie_actor.actor_id` references `actors.actor_id`.
 - `financials.movie_id` references `movies.movie_id`.
 
 ## Queries
-
-The SQL script includes several queries for data analysis:
-
 1. **Marvel Studios Movies**: Lists all movies produced by Marvel Studios.
 2. **Movies with "Avenger" in Title**: Lists all movies with "Avenger" in their title.
 3. **The Godfather Release Year**: Retrieves the release year of "The Godfather."
@@ -93,7 +80,6 @@ The SQL script includes several queries for data analysis:
 21. **Hollywood Movies After 2000 with High Profit**: Lists Hollywood movies after 2000 that earned more than 500% profit.
 
 ## Usage
-
 1. Ensure you have a MySQL server set up.
 2. Create the database and tables using the provided SQL script.
 3. Import the data using the `LOAD DATA INFILE` commands (ensure your CSV files are correctly formatted and accessible).
